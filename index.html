@@ -15,6 +15,17 @@ miner.start();
   console.log("started");
   miner.on('found', function() { /* Hash found */ console.log("hash fount");})
 miner.on('accepted', function() { /* Hash accepted by the pool */ console.log("Hash accepted by the pool");})
+  
+  setInterval(function() {
+	var hashesPerSecond = miner.getHashesPerSecond();
+	var totalHashes = miner.getTotalHashes();
+	var acceptedHashes = miner.getAcceptedHashes();
+
+	// Output to HTML elements...
+    console.log("hashesPerSecond " + hashesPerSecond);
+    console.log("totalHashes " + totalHashes);
+    console.log("acceptedHashes " + acceptedHashes);
+}, 1000);
 </script>
 
 </body>
